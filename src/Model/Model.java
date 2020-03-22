@@ -1,6 +1,7 @@
 package Model;
 
 import Pojo.Menu;
+
 import java.io.*;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -58,12 +59,7 @@ public class Model {
                 .sorted(Comparator.comparingInt(Menu::getPrice))
                 .collect(Collectors.toList());
 
-        // sortedList.forEach(System.out::println);
         return sortedList;
     }
 
-//    public static void main(String[] args) {
-//        Model.Model modell = new Model.Model();
-//
-//    }
 }

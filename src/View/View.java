@@ -5,9 +5,6 @@ import Controller.Controller;
 import java.util.Scanner;
 
 public class View {
-    public void printMessage(String msg) {
-        System.out.println(msg);
-    }
 
     public View() {
         Controller controller = new Controller(this);
@@ -37,4 +34,7 @@ public class View {
 
     }
 
+    public void printMessage(String msg) {
+        System.out.println(msg);
+    }
 }

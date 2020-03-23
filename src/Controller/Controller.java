@@ -25,12 +25,12 @@ public class Controller {
         view.printMessage(askMgs);
     }
 
-    public void ByeMgs() {
-        view.printMessage(goodByeMgs);
-    }
-
     public void askToSeeMenuAgainMgs() {
         view.printMessage(repeatMgs);
+    }
+
+    public void ByeMgs() {
+        view.printMessage(goodByeMgs);
     }
 
     public void errorMgs() {
@@ -38,14 +38,14 @@ public class Controller {
     }
 
     public void getMenuAndPrintToView() {
-        for (String s : model.readFileAndSendMenuToController()) {
-            view.printMessage(s);
+        for (Menu s : model.saveFileToListAndSendToController()) {
+            view.printMessage(s.toString());
         }
 
     }
 
-    public void getSortedListAndPrintToView() {
-        for (Menu s : model.returnSortedListToController()) {
+    public void getSortedMenuAndPrintToView() {
+        for (Menu s : model.returnSortedMenuToController()) {
             view.printMessage(s.toString());
         }
         askToSeeMenuAgainMgs();

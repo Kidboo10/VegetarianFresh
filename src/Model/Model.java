@@ -9,32 +9,9 @@ import java.util.stream.Stream;
 
 public class Model {
 
-    public List<String> readFileAndSendMenuToController() {
-
-        List<String> menuList = new LinkedList<>();
-        try {
-            FileInputStream inputStream = new FileInputStream("src\\menu.txt");
-            DataInputStream in = new DataInputStream(inputStream);
-            BufferedReader br = new BufferedReader(new InputStreamReader(in));
-            String strLine;
-
-            while ((strLine = br.readLine()) != null) {
-                menuList.add(strLine);
-
-            }
-
-            in.close();
-
-        } catch (Exception e) {
-            System.out.println("File dont exist " + e.getMessage());
-        }
-
-        return menuList;
-    }
-
-    private List<Menu> readFileAndSaveToList() {
+    public List<Menu> saveFileToListAndSendToController() {
         List<Menu> menuList = new ArrayList<>();
-        try (Scanner sc = new Scanner(new File("src//menu.txt"))) {
+        try (Scanner sc = new Scanner(new File("src//db//menu.txt"))) {
             while (sc.hasNext()) {
                 String meal = sc.nextLine().trim();
                 String readPrice = sc.nextLine().trim();
@@ -45,15 +22,15 @@ public class Model {
             }
 
         } catch (FileNotFoundException e) {
-            System.out.println("File dont exist " + e.getMessage());
+            System.out.println("File does not exist " + e.getMessage());
             System.exit(0);
         }
 
         return menuList;
     }
 
-    public List<Menu> returnSortedListToController() {
-        List<Menu> menuList = readFileAndSaveToList();
+    public List<Menu> returnSortedMenuToController() {
+        List<Menu> menuList = saveFileToListAndSendToController();
         List<Menu> sortedList;
         sortedList = menuList.stream().flatMap(Stream::of)
                 .sorted(Comparator.comparingInt(Menu::getPrice))

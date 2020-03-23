@@ -17,7 +17,7 @@ public class View {
             String input = sc.nextLine();
             switch (input.toLowerCase()) {
                 case "yes":
-                    controller.getSortedListAndPrintToView();
+                    controller.getSortedMenuAndPrintToView();
                     break;
                 case "no":
                     controller.ByeMgs();

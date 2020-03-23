@@ -14,14 +14,13 @@ public class View {
         controller.askToSeeSortedMenuMgs();
 
         while (true) {
-            String input;
-            input = sc.nextLine();
+            String input = sc.nextLine();
             switch (input.toLowerCase()) {
                 case "yes":
                     controller.getSortedListAndPrintToView();
                     break;
                 case "no":
-                   controller.ByeMgs();
+                    controller.ByeMgs();
                     System.exit(0);
                 default:
                     controller.errorMgs();

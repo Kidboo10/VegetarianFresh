@@ -7,11 +7,11 @@ import Pojo.Menu;
 public class Controller {
     View view;
     Model model = new Model();
-    String welcomeMgs = "Welcome to Vegetarian Fresh\n";
-    String askMgs = "Want to see the menu again but sorted\nType(yes or no)\n";
-    String repeatMgs = "Want to see the menu again\nType(yes or no)";
-    String error = "Pleas Type yes or no\n";
-    String goodByeMgs = "Good Bye!";
+    private String welcomeMgs = "Welcome to Vegetarian Fresh\n";
+    private String askMgs = "Want to see the menu again but sorted\nType(yes or no)\n";
+    private String repeatMgs = "Want to see the menu again\nType(yes or no)";
+    private String error = "Pleas Type yes or no\n";
+    private String goodByeMgs = "Good Bye!";
 
     public Controller(View view) {
         this.view = view;

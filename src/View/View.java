@@ -12,6 +12,8 @@ public class View {
         String mgs = "Want to see the menu again but sorted\nType(yes or no)\n";
         String rmgs = "Want to see the menu again\nType(yes or no)";
         String error = "Pleas Type yes or no\n";
+        controller.mgsWelcomeCustomer();
+        controller.getMenuAndPrintToView();
         printMessage(mgs);
 
         while (true) {

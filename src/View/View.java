@@ -14,8 +14,8 @@ public class View {
         controller.askToSeeSortedMenuMgs();
 
         while (true) {
-            String input = sc.nextLine();
-            switch (input.toLowerCase()) {
+            String input = sc.nextLine().toLowerCase().trim();
+            switch (input) {
                 case "yes":
                     controller.getSortedMenuAndPrintToView();
                     break;
